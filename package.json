@@ -1,0 +1,40 @@
+{
+  "name": "@axolo/file-md5-web",
+  "version": "0.1.0",
+  "description": "Get file md5 in web",
+  "author": "Yueming Fang",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:npm": "vite build --config npm.config.js"
+  },
+  "dependencies": {
+    "spark-md5": "^3.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vite": "^5.4.10",
+    "vue": "^3.5.12"
+  },
+  "keywords": [
+    "file md5",
+    "file md5 frontend",
+    "file md5 browser",
+    "file md5 webview",
+    "file md5 web",
+    "file md5 javascript",
+    "file md5 js"
+  ],
+  "homepage": "https://github.com/axolo/file-md5-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axolo/file-md5-web.git"
+  }
+}
