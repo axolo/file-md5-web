@@ -16,12 +16,13 @@ md5file(file, config = {})
 
 > params
 
-|     param     |  type   |            description             |
-| ------------- | ------- | ---------------------------------- |
-| `file`        | [File]  | file to hash                       |
-| `config`      | Object  | config of hash                     |
-| `config.size` | Number  | file chunk size, default to `20MB` |
-| `config.raw`  | Boolean | output as raw , false to `hex`     |
+|        param        |   type   |              description               |
+| ------------------- | -------- | -------------------------------------- |
+| `file`              | [File]   | file to hash                           |
+| `config`            | Object   | config of hash                         |
+| `config.size`       | Number   | file chunk size, default to `20MB`     |
+| `config.raw`        | Boolean  | output as raw , false to `hex`         |
+| `config.onProgress` | Function | callback total chunks and loaded chunk |
 
 > return
 

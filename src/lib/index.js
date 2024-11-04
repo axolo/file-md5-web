@@ -6,6 +6,7 @@ import SparkMD5 from 'spark-md5'
  * @typedef {Object} Config
  * @property {Number} size chunk size, default to 20MB.
  * @property {Boolean} raw output hash as raw, false to hex.
+ * @property {Function} onProgress callback total chunks and loaded chunk
  *
  * @author Yueming Fang
  * @version 0.1.0
@@ -32,6 +33,9 @@ const fileMd5Web = (file, config = {}) => {
       let start = currentChunk * chunkSize
       let end = ((start + chunkSize) >= file.size) ? file.size : start + chunkSize
       fileReader.readAsArrayBuffer(fileSlice.call(file, start, end))
+      if(config.onProgress instanceof Function) {
+        config.onProgress({ total: chunks, loaded: currentChunk + 1 })
+      }
     }
 
     fileReader.onerror = e => reject(e)

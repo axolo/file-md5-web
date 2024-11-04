@@ -12,7 +12,9 @@ export default {
     async change(e) {
       const file = e.target.files[0]
       this.loading = true
-      this.md5 = await md5file(file)
+      this.md5 = await md5file(file, {
+        onProgress: console.log
+      })
       this.loading = false
     }
   }
