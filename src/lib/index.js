@@ -9,7 +9,7 @@ import SparkMD5 from 'spark-md5'
  * @property {Function} onProgress callback total chunks and loaded chunk
  *
  * @author Yueming Fang
- * @version 0.1.0
+ * @version 0.1.5
  * @param {File} file - file for hash
  * @param {Config} config - hash config
  * @returns {String} md5 of file or Error
