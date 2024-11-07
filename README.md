@@ -16,13 +16,13 @@ md5file(file, config = {})
 
 > params
 
-|        param        |   type   |              description               |
-| ------------------- | -------- | -------------------------------------- |
-| `file`              | [File]   | file to hash                           |
-| `config`            | Object   | config of hash                         |
-| `config.size`       | Number   | file chunk size, default to `20MB`     |
-| `config.raw`        | Boolean  | output as raw , false to `hex`         |
-| `config.onProgress` | Function | callback total chunks and loaded chunk |
+|        param        |   type   |               description               |
+| ------------------- | -------- | --------------------------------------- |
+| `file`              | [File]   | file to hash                            |
+| `config`            | Object   | config of hash                          |
+| `config.size`       | Number   | file chunk size, default to `20MB`      |
+| `config.raw`        | Boolean  | output as raw , false to `hex`          |
+| `config.onProgress` | Function | callback chunks of `total` and `loaded` |
 
 > return
 
@@ -35,8 +35,12 @@ import md5file from '@axolo/file-md5-web'
 
 // <input id="file" type="file">
 document.getElementById('file').addEventListener('change', async () => {
-  const md5 = await md5file(this.files[0])
-  console.log(md5)
+  const md5 = await md5file(this.files[0], {
+    onProgress: p => {
+      console.log(`total:`, p.total, `, loaded:`, p.loaded)
+    }
+  })
+  console.log(md5) // md5 hex string
 })
 ```
 

@@ -13,7 +13,9 @@ export default {
       const file = e.target.files[0]
       this.loading = true
       this.md5 = await md5file(file, {
-        onProgress: console.log
+        onProgress: p => {
+          console.log(`total:`, p.total, `, loaded:`, p.loaded)
+        }
       })
       this.loading = false
     }
